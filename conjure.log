@@ -1,0 +1,137 @@
+20-04-08 19:49:44 arch-desktop INFO [conjure.main:39] - Logging initialised
+20-04-08 19:49:44 arch-desktop INFO [conjure.main:41] - System versions
+=== Conjure ===
+v2.1.2-2-gd3356a4de4
+
+=== OS ===
+Linux arch-desktop 5.4.6-arch1-1 #1 SMP PREEMPT Sat, 21 Dec 2019 16:34:41 +0000 x86_64 GNU/Linux
+
+=== Neovim ===
+NVIM v0.4.3
+Build type: Release
+LuaJIT 2.0.5
+Compilation: /usr/bin/cc -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -O2 -DNDEBUG -DMIN_LOG_LEVEL=3 -Wall -Wextra -pedantic -Wno-unused-parameter -Wstrict-prototypes -std=gnu99 -Wshadow -Wconversion -Wmissing-prototypes -Wimplicit-fallthrough -Wvla -fstack-protector-strong -fdiagnostics-color=always -DINCLUDE_GENERATED_DECLARATIONS -D_GNU_SOURCE -DNVIM_MSGPACK_HAS_FLOAT32 -DNVIM_UNIBI_HAS_VAR_FROM -I/build/neovim/src/build/config -I/build/neovim/src/neovim-0.4.3/src -I/usr/include -I/build/neovim/src/build/src/nvim/auto -I/build/neovim/src/build/include
+Compiled by builduser
+
+Features: +acl +iconv +tui
+See ":help feature-compile"
+
+   system vimrc file: "$VIM/sysinit.vim"
+  fall-back for $VIM: "/usr/share/nvim"
+
+Run :checkhealth for more info
+
+=== Java ===
+openjdk version "1.8.0_232"
+OpenJDK Runtime Environment (build 1.8.0_232-b09)
+OpenJDK 64-Bit Server VM (build 25.232-b09, mixed mode)
+
+20-04-08 19:49:44 arch-desktop INFO [conjure.rpc:195] - Starting RPC TCP server on port 39803
+20-04-08 19:49:44 arch-desktop INFO [conjure.rpc:207] - Starting RPC loops
+20-04-08 19:49:44 arch-desktop INFO [conjure.prepl:243] - Started prepl server on port 40361
+20-04-08 19:49:44 arch-desktop TRACE [conjure.rpc:175] - Received RPC message: {:type :notify, :method :up, :params [""], :client :stdio}
+20-04-08 19:49:44 arch-desktop TRACE [conjure.rpc:163] - Sending RPC message: {:type :request, :client :stdio, :id 1, :method :nvim-set-var, :params ["conjure_ready" 1]}
+20-04-08 19:49:44 arch-desktop TRACE [conjure.rpc:163] - Sending RPC message: {:type :request, :client :stdio, :id 2, :method :nvim-get-current-buf, :params nil}
+20-04-08 19:49:44 arch-desktop TRACE [conjure.rpc:175] - Received RPC message: {:type :response, :id 1, :error nil, :result nil, :client :stdio}
+20-04-08 19:49:44 arch-desktop INFO [conjure.main:46] - Everything's ready! Let's perform some magic.
+20-04-08 19:49:44 arch-desktop TRACE [conjure.rpc:175] - Received RPC message: {:type :response, :id 2, :error nil, :result #msgpack.core.Ext{:type 0, :data #object["[B" 0x53da95bb "[B@53da95bb"]}, :client :stdio}
+20-04-08 19:49:44 arch-desktop TRACE [conjure.rpc:163] - Sending RPC message: {:type :request, :client :stdio, :id 1, :method :nvim-call-atomic, :params [(["nvim_buf_get_name" [#msgpack.core.Ext{:type 0, :data #object["[B" 0x53da95bb "[B@53da95bb"]}]] ["nvim_buf_line_count" [#msgpack.core.Ext{:type 0, :data #object["[B" 0x53da95bb "[B@53da95bb"]}]] ["nvim_buf_get_lines" [#msgpack.core.Ext{:type 0, :data #object["[B" 0x53da95bb "[B@53da95bb"]} 0 25 false]] ["nvim_get_current_win" []] ["nvim_call_function" ["getcwd" (0)]])]}
+20-04-08 19:49:44 arch-desktop TRACE [conjure.rpc:175] - Received RPC message: {:type :response, :id 1, :error nil, :result [["/home/colin/projects/aok-elo-graph-front-end/src/aok_elo_graph_front_end/core.cljs" 42 ["(ns ^:figwheel-hooks aok-elo-graph-front-end.core" "  (:require" "   [goog.dom :as gdom]" "   [reagent.core :as reagent :refer [atom]]))" "" "(println \"This text is printed from src/aok_elo_graph_front_end/core.cljs. Go ahead and edit it and see reloading in action.\")" "" "(defn multiply [a b] (* a b))" "" "" ";; define your app data so that it doesn't get over-written on reload" "(defonce app-state (atom {:text \"cats\"}))" "" "(defn get-app-element []" "  (gdom/getElement \"app\"))" "" "(defn hello-world []" "  [:div" "   [:h1 (:text @app-state)]" "   [:h3 \"Edit this in src/aok_elo_graph_front_end/core.cljs and watch it change!\"]])" "" "(defn mount [el]" "  (reagent/render-component [hello-world] el))" "" "(defn mount-app-element []"] #msgpack.core.Ext{:type 1, :data #object["[B" 0x1253eb17 "[B@1253eb17"]} "/home/colin/projects/aok-elo-graph-front-end"] nil], :client :stdio}
+20-04-08 19:49:44 arch-desktop INFO [conjure.prepl:131] - Adding :pfig 127.0.0.1 6776
+20-04-08 19:49:44 arch-desktop TRACE [conjure.rpc:163] - Sending RPC message: {:type :request, :client :stdio, :id 1, :method :nvim-get-var, :params ["conjure_log_blacklist"]}
+20-04-08 19:49:44 arch-desktop TRACE [conjure.rpc:175] - Received RPC message: {:type :response, :id 1, :error nil, :result [], :client :stdio}
+20-04-08 19:49:44 arch-desktop TRACE [conjure.rpc:163] - Sending RPC message: {:type :request, :client :stdio, :id 1, :method :nvim-execute-lua, :params ["return require('conjure').upsert_log(...)" ("/tmp/conjure.cljc" "small" false false true)]}
+20-04-08 19:49:44 arch-desktop TRACE [conjure.rpc:175] - Received RPC message: {:type :notify, :method :clear-virtual, :params [0], :client :stdio}
+20-04-08 19:49:44 arch-desktop TRACE [conjure.rpc:163] - Sending RPC message: {:type :request, :client :stdio, :id 2, :method :nvim-get-current-buf, :params nil}
+20-04-08 19:49:44 arch-desktop TRACE [conjure.rpc:175] - Received RPC message: {:type :response, :id 1, :error nil, :result {"buf" 3, "win" 1001}, :client :stdio}
+20-04-08 19:49:44 arch-desktop TRACE [conjure.rpc:175] - Received RPC message: {:type :response, :id 2, :error nil, :result #msgpack.core.Ext{:type 0, :data #object["[B" 0x7dc6aec "[B@7dc6aec"]}, :client :stdio}
+20-04-08 19:49:44 arch-desktop TRACE [conjure.rpc:163] - Sending RPC message: {:type :request, :client :stdio, :id 1, :method :nvim-call-atomic, :params [(["nvim_buf_get_name" [#msgpack.core.Ext{:type 0, :data #object["[B" 0x7dc6aec "[B@7dc6aec"]}]] ["nvim_buf_line_count" [#msgpack.core.Ext{:type 0, :data #object["[B" 0x7dc6aec "[B@7dc6aec"]}]] ["nvim_buf_get_lines" [#msgpack.core.Ext{:type 0, :data #object["[B" 0x7dc6aec "[B@7dc6aec"]} 0 25 false]] ["nvim_get_current_win" []] ["nvim_call_function" ["getcwd" (0)]])]}
+20-04-08 19:49:44 arch-desktop TRACE [conjure.rpc:163] - Sending RPC message: {:type :request, :client :stdio, :id 2, :method :nvim-buf-line-count, :params [3]}
+20-04-08 19:49:44 arch-desktop TRACE [conjure.rpc:175] - Received RPC message: {:type :response, :id 1, :error nil, :result [["/home/colin/projects/aok-elo-graph-front-end/src/aok_elo_graph_front_end/core.cljs" 42 ["(ns ^:figwheel-hooks aok-elo-graph-front-end.core" "  (:require" "   [goog.dom :as gdom]" "   [reagent.core :as reagent :refer [atom]]))" "" "(println \"This text is printed from src/aok_elo_graph_front_end/core.cljs. Go ahead and edit it and see reloading in action.\")" "" "(defn multiply [a b] (* a b))" "" "" ";; define your app data so that it doesn't get over-written on reload" "(defonce app-state (atom {:text \"cats\"}))" "" "(defn get-app-element []" "  (gdom/getElement \"app\"))" "" "(defn hello-world []" "  [:div" "   [:h1 (:text @app-state)]" "   [:h3 \"Edit this in src/aok_elo_graph_front_end/core.cljs and watch it change!\"]])" "" "(defn mount [el]" "  (reagent/render-component [hello-world] el))" "" "(defn mount-app-element []"] #msgpack.core.Ext{:type 1, :data #object["[B" 0xada2253 "[B@ada2253"]} "/home/colin/projects/aok-elo-graph-front-end"] nil], :client :stdio}
+20-04-08 19:49:44 arch-desktop TRACE [conjure.rpc:175] - Received RPC message: {:type :response, :id 2, :error nil, :result 1, :client :stdio}
+20-04-08 19:49:44 arch-desktop TRACE [conjure.rpc:163] - Sending RPC message: {:type :request, :client :stdio, :id 1, :method :nvim-call-atomic, :params [(["nvim_buf_set_lines" [3 0 1 false ["; conjure/out | Welcome to Conjure! (v2.1.2-2-gd3356a4de4)"]]] ["nvim_buf_set_lines" [3 -1 -1 false ("; conjure/up | Adding :pfig")]] ["nvim_win_set_cursor" [1001 [2 0]]])]}
+20-04-08 19:49:44 arch-desktop TRACE [conjure.rpc:163] - Sending RPC message: {:type :request, :client :stdio, :id 2, :method :nvim-create-namespace, :params ["conjure_virtual_text"]}
+20-04-08 19:49:44 arch-desktop TRACE [conjure.rpc:175] - Received RPC message: {:type :response, :id 1, :error nil, :result [[nil nil nil] nil], :client :stdio}
+20-04-08 19:49:44 arch-desktop INFO [conjure.prepl:64] - Connecting through remote-prepl :pfig
+20-04-08 19:49:44 arch-desktop TRACE [conjure.rpc:163] - Sending RPC message: {:type :request, :client :stdio, :id 1, :method :nvim-win-get-cursor, :params [#msgpack.core.Ext{:type 1, :data #object["[B" 0x1253eb17 "[B@1253eb17"]}]}
+20-04-08 19:49:44 arch-desktop TRACE [conjure.rpc:175] - Received RPC message: {:type :response, :id 2, :error nil, :result 2, :client :stdio}
+20-04-08 19:49:44 arch-desktop TRACE [conjure.rpc:175] - Received RPC message: {:type :response, :id 1, :error nil, :result [1 0], :client :stdio}
+20-04-08 19:49:44 arch-desktop TRACE [conjure.rpc:163] - Sending RPC message: {:type :request, :client :stdio, :id 2, :method :nvim-buf-clear-namespace, :params [#msgpack.core.Ext{:type 0, :data #object["[B" 0x7dc6aec "[B@7dc6aec"]} 2 0 -1]}
+20-04-08 19:49:44 arch-desktop TRACE [conjure.rpc:175] - Received RPC message: {:type :response, :id 2, :error nil, :result nil, :client :stdio}
+20-04-08 19:49:44 arch-desktop TRACE [conjure.rpc:163] - Sending RPC message: {:type :request, :client :stdio, :id 1, :method :nvim-call-atomic, :params [(["nvim_buf_clear_namespace" [#msgpack.core.Ext{:type 0, :data #object["[B" 0x53da95bb "[B@53da95bb"]} 2 0 -1]] ["nvim_buf_set_virtual_text" [#msgpack.core.Ext{:type 0, :data #object["[B" 0x53da95bb "[B@53da95bb"]} 2 0 [["@> Assessing :pfig" "comment"]] {}]])]}
+20-04-08 19:49:44 arch-desktop TRACE [conjure.rpc:175] - Received RPC message: {:type :response, :id 1, :error nil, :result [[nil 2] nil], :client :stdio}
+20-04-08 19:49:44 arch-desktop TRACE [conjure.prepl:151] - Fetching current deps.
+20-04-08 19:49:44 arch-desktop TRACE [conjure.prepl:68] - Read from remote-prepl :pfig - {:tag :out, :val "Open URL http://localhost:9500\n", :form nil}
+20-04-08 19:49:45 arch-desktop TRACE [conjure.rpc:175] - Received RPC message: {:type :notify, :method :quick-doc, :params [0], :client :stdio}
+20-04-08 19:49:45 arch-desktop TRACE [conjure.rpc:163] - Sending RPC message: {:type :request, :client :stdio, :id 1, :method :nvim-get-current-buf, :params nil}
+20-04-08 19:49:45 arch-desktop TRACE [conjure.rpc:175] - Received RPC message: {:type :response, :id 1, :error nil, :result #msgpack.core.Ext{:type 0, :data #object["[B" 0x2b7a4451 "[B@2b7a4451"]}, :client :stdio}
+20-04-08 19:49:45 arch-desktop TRACE [conjure.rpc:163] - Sending RPC message: {:type :request, :client :stdio, :id 1, :method :nvim-call-atomic, :params [(["nvim_buf_get_name" [#msgpack.core.Ext{:type 0, :data #object["[B" 0x2b7a4451 "[B@2b7a4451"]}]] ["nvim_buf_line_count" [#msgpack.core.Ext{:type 0, :data #object["[B" 0x2b7a4451 "[B@2b7a4451"]}]] ["nvim_buf_get_lines" [#msgpack.core.Ext{:type 0, :data #object["[B" 0x2b7a4451 "[B@2b7a4451"]} 0 25 false]] ["nvim_get_current_win" []] ["nvim_call_function" ["getcwd" (0)]])]}
+20-04-08 19:49:45 arch-desktop TRACE [conjure.rpc:175] - Received RPC message: {:type :response, :id 1, :error nil, :result [["/home/colin/projects/aok-elo-graph-front-end/src/aok_elo_graph_front_end/core.cljs" 42 ["(ns ^:figwheel-hooks aok-elo-graph-front-end.core" "  (:require" "   [goog.dom :as gdom]" "   [reagent.core :as reagent :refer [atom]]))" "" "(println \"This text is printed from src/aok_elo_graph_front_end/core.cljs. Go ahead and edit it and see reloading in action.\")" "" "(defn multiply [a b] (* a b))" "" "" ";; define your app data so that it doesn't get over-written on reload" "(defonce app-state (atom {:text \"cats\"}))" "" "(defn get-app-element []" "  (gdom/getElement \"app\"))" "" "(defn hello-world []" "  [:div" "   [:h1 (:text @app-state)]" "   [:h3 \"Edit this in src/aok_elo_graph_front_end/core.cljs and watch it change!\"]])" "" "(defn mount [el]" "  (reagent/render-component [hello-world] el))" "" "(defn mount-app-element []"] #msgpack.core.Ext{:type 1, :data #object["[B" 0x49b45589 "[B@49b45589"]} "/home/colin/projects/aok-elo-graph-front-end"] nil], :client :stdio}
+20-04-08 19:49:45 arch-desktop TRACE [conjure.rpc:163] - Sending RPC message: {:type :request, :client :stdio, :id 1, :method :nvim-call-atomic, :params [(["nvim_get_current_buf" []] ["nvim_get_current_win" []] ["nvim_eval" ["matchstr(getline('.'), '\\%'.col('.').'c.')"]] ["nvim_call_function" ["searchpairpos" ("(" "" ")" "bnzW" "!conjure#cursor_in_code()")]] ["nvim_call_function" ["searchpairpos" ("(" "" ")" "nzW" "!conjure#cursor_in_code()")]])]}
+20-04-08 19:49:45 arch-desktop TRACE [conjure.rpc:175] - Received RPC message: {:type :response, :id 1, :error nil, :result [[#msgpack.core.Ext{:type 0, :data #object["[B" 0x2d5bcd59 "[B@2d5bcd59"]} #msgpack.core.Ext{:type 1, :data #object["[B" 0x76c8aa1b "[B@76c8aa1b"]} "(" [0 0] [4 45]] nil], :client :stdio}
+20-04-08 19:49:45 arch-desktop TRACE [conjure.rpc:163] - Sending RPC message: {:type :request, :client :stdio, :id 1, :method :nvim-win-get-cursor, :params [#msgpack.core.Ext{:type 1, :data #object["[B" 0x76c8aa1b "[B@76c8aa1b"]}]}
+20-04-08 19:49:45 arch-desktop TRACE [conjure.rpc:175] - Received RPC message: {:type :response, :id 1, :error nil, :result [1 0], :client :stdio}
+20-04-08 19:49:45 arch-desktop TRACE [conjure.rpc:163] - Sending RPC message: {:type :request, :client :stdio, :id 1, :method :nvim-call-atomic, :params [(["nvim_buf_get_lines" [#msgpack.core.Ext{:type 0, :data #object["[B" 0x2d5bcd59 "[B@2d5bcd59"]} 0 4 false]])]}
+20-04-08 19:49:45 arch-desktop TRACE [conjure.rpc:175] - Received RPC message: {:type :response, :id 1, :error nil, :result [[["(ns ^:figwheel-hooks aok-elo-graph-front-end.core" "  (:require" "   [goog.dom :as gdom]" "   [reagent.core :as reagent :refer [atom]]))"]] nil], :client :stdio}
+20-04-08 19:49:45 arch-desktop TRACE [conjure.rpc:163] - Sending RPC message: {:type :request, :client :stdio, :id 1, :method :nvim-buf-clear-namespace, :params [#msgpack.core.Ext{:type 0, :data #object["[B" 0x2b7a4451 "[B@2b7a4451"]} 2 0 -1]}
+20-04-08 19:49:45 arch-desktop TRACE [conjure.rpc:175] - Received RPC message: {:type :response, :id 1, :error nil, :result nil, :client :stdio}
+20-04-08 19:49:45 arch-desktop TRACE [conjure.prepl:88] - Writing to tag: :pfig - (->>
+ '(conjure-deps.javaclasspath.v0v3v0.clojure.java.classpath
+   conjure-deps.toolsnamespace.v0v3v1.clojure.tools.namespace.dependency
+   conjure-deps.toolsnamespace.v0v3v1.clojure.tools.namespace.track
+   conjure-deps.toolsreader.v1v3v2.clojure.tools.reader.impl.utils
+   conjure-deps.toolsreader.v1v3v2.clojure.tools.reader.reader-types
+   conjure-deps.toolsreader.v1v3v2.clojure.tools.reader.impl.inspect
+   conjure-deps.toolsreader.v1v3v2.clojure.tools.reader.impl.errors
+   conjure-deps.toolsreader.v1v3v2.clojure.tools.reader.default-data-readers
+   conjure-deps.toolsreader.v1v3v2.clojure.tools.reader.impl.commons
+   conjure-deps.toolsreader.v1v3v2.clojure.tools.reader
+   conjure-deps.toolsnamespace.v0v3v1.clojure.tools.namespace.parse
+   conjure-deps.toolsnamespace.v0v3v1.clojure.tools.namespace.file
+   conjure-deps.toolsnamespace.v0v3v1.clojure.tools.namespace.find
+   conjure-deps.toolsnamespace.v0v3v1.clojure.tools.namespace.dir
+   conjure-deps.toolsnamespace.v0v3v1.clojure.tools.namespace.reload
+   conjure-deps.toolsnamespace.v0v3v1.clojure.tools.namespace.repl
+   conjure-deps.compliment.v0v3v9.compliment.sources
+   conjure-deps.compliment.v0v3v9.compliment.utils
+   conjure-deps.compliment.v0v3v9.compliment.sources.ns-mappings
+   conjure-deps.compliment.v0v3v9.compliment.sources.local-bindings
+   conjure-deps.compliment.v0v3v9.compliment.sources.class-members
+   conjure-deps.compliment.v0v3v9.compliment.sources.namespaces-and-classes
+   conjure-deps.compliment.v0v3v9.compliment.sources.keywords
+   conjure-deps.compliment.v0v3v9.compliment.context
+   conjure-deps.compliment.v0v3v9.compliment.sources.special-forms
+   conjure-deps.compliment.v0v3v9.compliment.sources.resources
+   conjure-deps.compliment.v0v3v9.compliment.core)
+ (filter find-ns)
+ (set))
+20-04-08 19:49:45 arch-desktop ERROR [conjure.rpc:?] - Error from thread 'RPC message handler': java.lang.IllegalArgumentException: contains? not supported on type: clojure.lang.Symbol
+20-04-08 19:49:45 arch-desktop TRACE [conjure.prepl:68] - Read from remote-prepl :pfig - {:tag :ret, :val "#{}", :ns "cljs.user", :ms 10, :form "(->> '(conjure-deps.…"}
+20-04-08 19:50:02 arch-desktop TRACE [conjure.rpc:175] - Received RPC message: {:type :notify, :method :clear-virtual, :params [0], :client :stdio}
+20-04-08 19:50:02 arch-desktop TRACE [conjure.rpc:163] - Sending RPC message: {:type :request, :client :stdio, :id 1, :method :nvim-get-current-buf, :params nil}
+20-04-08 19:50:02 arch-desktop TRACE [conjure.rpc:175] - Received RPC message: {:type :response, :id 1, :error nil, :result #msgpack.core.Ext{:type 0, :data #object["[B" 0xfe9205f "[B@fe9205f"]}, :client :stdio}
+20-04-08 19:50:02 arch-desktop TRACE [conjure.rpc:163] - Sending RPC message: {:type :request, :client :stdio, :id 1, :method :nvim-call-atomic, :params [(["nvim_buf_get_name" [#msgpack.core.Ext{:type 0, :data #object["[B" 0xfe9205f "[B@fe9205f"]}]] ["nvim_buf_line_count" [#msgpack.core.Ext{:type 0, :data #object["[B" 0xfe9205f "[B@fe9205f"]}]] ["nvim_buf_get_lines" [#msgpack.core.Ext{:type 0, :data #object["[B" 0xfe9205f "[B@fe9205f"]} 0 25 false]] ["nvim_get_current_win" []] ["nvim_call_function" ["getcwd" (0)]])]}
+20-04-08 19:50:02 arch-desktop TRACE [conjure.rpc:175] - Received RPC message: {:type :response, :id 1, :error nil, :result [["/tmp/conjure.cljc" 2 ["; conjure/out | Welcome to Conjure! (v2.1.2-2-gd3356a4de4)" "; conjure/up | Adding :pfig"] #msgpack.core.Ext{:type 1, :data #object["[B" 0x649a3436 "[B@649a3436"]} "/home/colin/projects/aok-elo-graph-front-end"] nil], :client :stdio}
+20-04-08 19:50:02 arch-desktop WARN [conjure.util:76] - Failed to parse code clojure.lang.ExceptionInfo: EOF while reading. {:type :reader-exception, :ex-kind :eof}
+20-04-08 19:50:02 arch-desktop TRACE [conjure.rpc:163] - Sending RPC message: {:type :request, :client :stdio, :id 1, :method :nvim-buf-clear-namespace, :params [#msgpack.core.Ext{:type 0, :data #object["[B" 0xfe9205f "[B@fe9205f"]} 2 0 -1]}
+20-04-08 19:50:02 arch-desktop TRACE [conjure.rpc:175] - Received RPC message: {:type :response, :id 1, :error nil, :result nil, :client :stdio}
+20-04-08 19:50:02 arch-desktop TRACE [conjure.rpc:175] - Received RPC message: {:type :notify, :method :quick-doc, :params [0], :client :stdio}
+20-04-08 19:50:02 arch-desktop TRACE [conjure.rpc:163] - Sending RPC message: {:type :request, :client :stdio, :id 1, :method :nvim-get-current-buf, :params nil}
+20-04-08 19:50:02 arch-desktop TRACE [conjure.rpc:175] - Received RPC message: {:type :response, :id 1, :error nil, :result #msgpack.core.Ext{:type 0, :data #object["[B" 0x17d81cf9 "[B@17d81cf9"]}, :client :stdio}
+20-04-08 19:50:02 arch-desktop TRACE [conjure.rpc:163] - Sending RPC message: {:type :request, :client :stdio, :id 1, :method :nvim-call-atomic, :params [(["nvim_buf_get_name" [#msgpack.core.Ext{:type 0, :data #object["[B" 0x17d81cf9 "[B@17d81cf9"]}]] ["nvim_buf_line_count" [#msgpack.core.Ext{:type 0, :data #object["[B" 0x17d81cf9 "[B@17d81cf9"]}]] ["nvim_buf_get_lines" [#msgpack.core.Ext{:type 0, :data #object["[B" 0x17d81cf9 "[B@17d81cf9"]} 0 25 false]] ["nvim_get_current_win" []] ["nvim_call_function" ["getcwd" (0)]])]}
+20-04-08 19:50:02 arch-desktop TRACE [conjure.rpc:175] - Received RPC message: {:type :response, :id 1, :error nil, :result [["/tmp/conjure.cljc" 2 ["; conjure/out | Welcome to Conjure! (v2.1.2-2-gd3356a4de4)" "; conjure/up | Adding :pfig"] #msgpack.core.Ext{:type 1, :data #object["[B" 0x24f3e46b "[B@24f3e46b"]} "/home/colin/projects/aok-elo-graph-front-end"] nil], :client :stdio}
+20-04-08 19:50:02 arch-desktop WARN [conjure.util:76] - Failed to parse code clojure.lang.ExceptionInfo: EOF while reading. {:type :reader-exception, :ex-kind :eof}
+20-04-08 19:50:02 arch-desktop TRACE [conjure.rpc:163] - Sending RPC message: {:type :request, :client :stdio, :id 1, :method :nvim-call-atomic, :params [(["nvim_get_current_buf" []] ["nvim_get_current_win" []] ["nvim_eval" ["matchstr(getline('.'), '\\%'.col('.').'c.')"]] ["nvim_call_function" ["searchpairpos" ("(" "" ")" "bnzW" "!conjure#cursor_in_code()")]] ["nvim_call_function" ["searchpairpos" ("(" "" ")" "nzW" "!conjure#cursor_in_code()")]])]}
+20-04-08 19:50:02 arch-desktop TRACE [conjure.rpc:175] - Received RPC message: {:type :response, :id 1, :error nil, :result [[#msgpack.core.Ext{:type 0, :data #object["[B" 0x62ded372 "[B@62ded372"]} #msgpack.core.Ext{:type 1, :data #object["[B" 0x57d0709b "[B@57d0709b"]} ";" [0 0] [0 0]] nil], :client :stdio}
+20-04-08 19:50:02 arch-desktop TRACE [conjure.rpc:163] - Sending RPC message: {:type :request, :client :stdio, :id 1, :method :nvim-win-get-cursor, :params [#msgpack.core.Ext{:type 1, :data #object["[B" 0x57d0709b "[B@57d0709b"]}]}
+20-04-08 19:50:02 arch-desktop TRACE [conjure.rpc:175] - Received RPC message: {:type :response, :id 1, :error nil, :result [2 0], :client :stdio}
+20-04-08 19:50:02 arch-desktop TRACE [conjure.rpc:163] - Sending RPC message: {:type :request, :client :stdio, :id 1, :method :nvim-call-atomic, :params [()]}
+20-04-08 19:50:02 arch-desktop TRACE [conjure.rpc:175] - Received RPC message: {:type :response, :id 1, :error nil, :result [[] nil], :client :stdio}
+20-04-08 19:50:02 arch-desktop TRACE [conjure.rpc:163] - Sending RPC message: {:type :request, :client :stdio, :id 1, :method :nvim-buf-clear-namespace, :params [#msgpack.core.Ext{:type 0, :data #object["[B" 0x17d81cf9 "[B@17d81cf9"]} 2 0 -1]}
+20-04-08 19:50:02 arch-desktop TRACE [conjure.rpc:175] - Received RPC message: {:type :response, :id 1, :error nil, :result nil, :client :stdio}
+20-04-08 19:50:04 arch-desktop TRACE [conjure.rpc:175] - Received RPC message: {:type :notify, :method :stop, :params [0], :client :stdio}
+20-04-08 19:50:04 arch-desktop TRACE [conjure.rpc:163] - Sending RPC message: {:type :request, :client :stdio, :id 1, :method :nvim-get-current-buf, :params nil}
+20-04-08 19:50:04 arch-desktop TRACE [conjure.rpc:175] - Received RPC message: {:type :response, :id 1, :error nil, :result #msgpack.core.Ext{:type 0, :data #object["[B" 0xb8814c "[B@b8814c"]}, :client :stdio}
+20-04-08 19:50:04 arch-desktop TRACE [conjure.rpc:163] - Sending RPC message: {:type :request, :client :stdio, :id 1, :method :nvim-call-atomic, :params [(["nvim_buf_get_name" [#msgpack.core.Ext{:type 0, :data #object["[B" 0xb8814c "[B@b8814c"]}]] ["nvim_buf_line_count" [#msgpack.core.Ext{:type 0, :data #object["[B" 0xb8814c "[B@b8814c"]}]] ["nvim_buf_get_lines" [#msgpack.core.Ext{:type 0, :data #object["[B" 0xb8814c "[B@b8814c"]} 0 25 false]] ["nvim_get_current_win" []] ["nvim_call_function" ["getcwd" (0)]])]}
+20-04-08 19:50:04 arch-desktop INFO [conjure.main:21] - Shutting down
+20-04-08 19:50:04 arch-desktop ERROR [conjure.rpc:?] - Error from thread 'RPC stdin handler': java.io.EOFException
