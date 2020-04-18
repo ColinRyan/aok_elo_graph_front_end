@@ -1,1 +1,1 @@
-{:conns {:pfig {:port 6776}}}
+{:conns {:pfig {:port 6776 :lang :cljs}}}

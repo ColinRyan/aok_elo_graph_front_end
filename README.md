@@ -1,10 +1,11 @@
 # aok-elo-graph-front-end
 
-FIXME: Write a one-line description of your library/project.
+A webpage displaying information about Age of empires 2:DE
 
 ## Overview
 
-FIXME: Write a paragraph about the library/project and highlight its goals.
+Right now the project features just a chart showing the number
+of players per 100 ELO in 1v1 Random Map games.
 
 ## Development
 
@@ -32,6 +33,6 @@ To create a production build run:
 
 ## License
 
-Copyright © 2018 FIXME
+Copyright © 2018 Colin Ryan
 
-Distributed under the Eclipse Public License either version 1.0 or (at your option) any later version.
+Distributed under the MIT License. 

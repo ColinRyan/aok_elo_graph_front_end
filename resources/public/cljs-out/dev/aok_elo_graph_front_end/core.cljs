@@ -10,7 +10,7 @@
 
 
 ;; define your app data so that it doesn't get over-written on reload
-(defonce app-state (atom {:text "AOK: DE 1v1 ELO" :data []}))
+(defonce app-state (atom {:text "AOK: DE 1v1 ELO" :total 0 :data []}))
 
 
 
@@ -19,12 +19,14 @@
         (defn rechartsCompatible [[rank amt]] 
           (js/console.log (clj->js(name rank )))
           
-          {:name  (js/parseInt (name rank ))  :count amt :amt amt})
+          {:name  (js/parseInt (name rank ))  :players amt })
 
         (def ratings (sort-by first (map rechartsCompatible (:playerCountByRating (:body response)))))
 
 
         (swap! app-state assoc :data ratings)
+
+        (swap! app-state assoc :total (:total (:body response)))
         (js/console.log (clj->js (:data @app-state)))
 )))
 
@@ -57,8 +59,9 @@
     [YAxis]
     [Tooltip]
     [Legend]
-    [Bar  {:dataKey "count" :fill "blue"}]
+    [Bar  {:dataKey "players" :fill "#8884d8"}]
    ]
+   [:p "Total Players: " (:total @app-state)]
    
   ]
   
@@ -83,4 +86,4 @@
   ;; (swap! app-state update-in [:__figwheel_counter] inc)
 )
 
-
+(multiply 2 2)
