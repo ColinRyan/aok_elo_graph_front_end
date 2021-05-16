@@ -27,11 +27,11 @@ return cljs_test_display.notify.with_permission.call(null,"granted",(function ()
 return (new Notification("All CLJS Tests Passed",({"icon": cljs_test_display.notify.green_url, "silent": true})));
 }));
 });
-cljs_test_display.notify.failure = (function cljs_test_display$notify$failure(p__8585){
-var map__8586 = p__8585;
-var map__8586__$1 = (((((!((map__8586 == null))))?(((((map__8586.cljs$lang$protocol_mask$partition0$ & (64))) || ((cljs.core.PROTOCOL_SENTINEL === map__8586.cljs$core$ISeq$))))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__8586):map__8586);
-var error = cljs.core.get.call(null,map__8586__$1,new cljs.core.Keyword(null,"error","error",-978969032));
-var fail = cljs.core.get.call(null,map__8586__$1,new cljs.core.Keyword(null,"fail","fail",1706214930));
+cljs_test_display.notify.failure = (function cljs_test_display$notify$failure(p__20158){
+var map__20159 = p__20158;
+var map__20159__$1 = (((((!((map__20159 == null))))?(((((map__20159.cljs$lang$protocol_mask$partition0$ & (64))) || ((cljs.core.PROTOCOL_SENTINEL === map__20159.cljs$core$ISeq$))))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__20159):map__20159);
+var error = cljs.core.get.call(null,map__20159__$1,new cljs.core.Keyword(null,"error","error",-978969032));
+var fail = cljs.core.get.call(null,map__20159__$1,new cljs.core.Keyword(null,"fail","fail",1706214930));
 return cljs_test_display.notify.with_permission.call(null,"granted",(function (){
 return (new Notification("CLJS Tests Failed",({"icon": cljs_test_display.notify.red_url, "silent": true, "body": [(cljs.core.truth_(fail)?[cljs.core.str.cljs$core$IFn$_invoke$arity$1(fail)," failures "].join(''):null),(cljs.core.truth_(error)?[cljs.core.str.cljs$core$IFn$_invoke$arity$1(error)," errors"].join(''):null)].join('')})));
 }));

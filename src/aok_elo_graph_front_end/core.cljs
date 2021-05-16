@@ -10,28 +10,35 @@
 
 
 ;; define your app data so that it doesn't get over-written on reload
-(defonce app-state (atom {:text "AOK: DE 1v1 ELO" :total 0 :data []}))
+(def app-state (atom {:1v1 { :title "AOK: DE 1v1 ELO distribution" :total 0 :data [] :lastUpdated ""} :team { :title "AOK: DE team ELO distribution" :total 0 :data [] :lastUpdated ""} }))
 
 
 
-(defn make-remote-call [endpoint]
+(defn make-remote-call [leaderboard endpoint]
   (go (let [response (<! (http/get endpoint {:with-credentials? false}))]
+
+        (js/console.log (clj->js(name leaderboard)))
         (defn rechartsCompatible [[rank amt]] 
           (js/console.log (clj->js(name rank )))
           
           {:name  (js/parseInt (name rank ))  :players amt })
 
-        (def ratings (sort-by first (map rechartsCompatible (:playerCountByRating (:body response)))))
+
+        (def ratings (sort-by first (map rechartsCompatible (:playerCountByRating (:record (:body response))))))
 
 
-        (swap! app-state assoc :data ratings)
+        (swap! app-state assoc-in [ leaderboard :data ] ratings)
 
-        (swap! app-state assoc :total (:total (:body response)))
-        (js/console.log (clj->js (:data @app-state)))
+        (swap! app-state assoc-in [ leaderboard :total ] (:total (:record (:body response))))
+
+        (swap! app-state assoc-in [ leaderboard :lastUpdated ] (:date (:record (:body response))))
+        (js/console.log (clj->js @app-state))
 )))
 
 
-( make-remote-call "https://api.jsonbin.io/b/5e8d10d6ab2e011ba9698bf8/latest" )
+( make-remote-call :1v1 "https://api.jsonbin.io/v3/b/5e8d10d6ab2e011ba9698bf8/latest" )
+
+( make-remote-call :team "https://api.jsonbin.io/v3/b/60a1355f1ad3151d4b3118c7/latest" )
 
 
 
@@ -50,20 +57,48 @@
 (def BarChart (reagent/adapt-react-class (aget js/Recharts "BarChart")))
 (def Bar (reagent/adapt-react-class (aget js/Recharts "Bar")))
 
-(defn hello-world []
+
+(defn onevoneELO []
   [:div
-   [:h1 (:text @app-state)]
-   [BarChart  { :width 730 :height 400 :data (:data @app-state)}
+   [:h2 (:title (:1v1 @app-state))]
+   [BarChart  { :width 730 :height 400 :data (:data(:1v1 @app-state))}
     [CartesianGrid  {:strokeDasharray "3 3"}]
     [XAxis {:dataKey "name"}]
     [YAxis]
     [Tooltip]
     [Legend]
     [Bar  {:dataKey "players" :fill "#8884d8"}]
+    ]
+   [:span {:style {:color "grey"}} "Total Players: " [:span {:style {:color "black"}} ( :total (:1v1 @app-state))]]
+   [:span {:style {:color "grey"}} " Last Updated on: " [:span {:style {:color "black"}} ( :lastUpdated (:1v1 @app-state))]]
+
    ]
-   [:p "Total Players: " (:total @app-state)]
-   
-  ]
+  )
+(defn teamELO []
+  [:div
+   [:h2 (:title (:team @app-state))]
+   [BarChart  { :width 730 :height 400 :data (:data(:team @app-state))}
+    [CartesianGrid  {:strokeDasharray "3 3"}]
+    [XAxis {:dataKey "name"}]
+    [YAxis]
+    [Tooltip]
+    [Legend]
+    [Bar  {:dataKey "players" :fill "#8884d8"}]
+    ]
+
+   [:span {:style {:color "grey"}} "Total Players: " [:span {:style {:color "black"}} ( :total (:team @app-state))]]
+   [:span {:style {:color "grey"}} " Last Updated on: " [:span {:style {:color "black"}} ( :lastUpdated (:team @app-state))]]
+
+   ]
+  )
+(defn hello-world []
+  [:div 
+   [onevoneELO]
+
+   [teamELO]
+
+
+   ]
   
 )
 
